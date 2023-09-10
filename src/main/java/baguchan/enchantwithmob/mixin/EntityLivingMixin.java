@@ -33,7 +33,7 @@ public abstract class EntityLivingMixin extends Entity implements IEnchantCap {
     public void spawnInit() {
         super.spawnInit();
 
-        if (this.random.nextFloat() < 0.025F) {
+        if (this.random.nextFloat() < 0.085F + 0.1F * this.world.seasonManager.getSeasonProgress()) {
             EntityLiving living = (EntityLiving) ((Object) this);
             MobEnchantUtils.addRandomEnchantmentToEntity(living, this, this.random, (int) (15 + 20 * this.world.seasonManager.getSeasonProgress()), true, true);
             int i = MobEnchantUtils.getMobEnchantLevelFromHandler(this.getEnchantCap().getMobEnchants(), MobEnchants.EXTRA_HEALTH);
