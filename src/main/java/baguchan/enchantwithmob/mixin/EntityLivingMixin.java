@@ -19,9 +19,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EntityLiving.class)
 public abstract class EntityLivingMixin extends Entity implements IEnchantCap {
-    @Shadow
+    @Shadow(remap = false)
     public int health;
-    @Shadow
+    @Shadow(remap = false)
     public int prevHealth;
     public MobEnchantCap MOB_ENCHANT_CAP = new MobEnchantCap();
 
@@ -35,7 +35,7 @@ public abstract class EntityLivingMixin extends Entity implements IEnchantCap {
 
         if (this.random.nextFloat() < 0.025F) {
             EntityLiving living = (EntityLiving) ((Object) this);
-            MobEnchantUtils.addRandomEnchantmentToEntity(living, this, this.random, 20, true, true);
+            MobEnchantUtils.addRandomEnchantmentToEntity(living, this, this.random, (int) (15 + 20 * this.world.seasonManager.getSeasonProgress()), true, true);
             int i = MobEnchantUtils.getMobEnchantLevelFromHandler(this.getEnchantCap().getMobEnchants(), MobEnchants.EXTRA_HEALTH);
             this.health += i * 4;
             this.prevHealth += i * 4;
