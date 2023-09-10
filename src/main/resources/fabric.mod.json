@@ -1,16 +1,15 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "enchantwithmob",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "EnchantWithMob",
+  "description": "This mod is add MobEnchant in BTA.",
   "authors": [
-    "Turnip Labs"
+    "bagu_chan"
   ],
   "contact": {
     "homepage": "",
-    "sources": ""
+    "sources": "https://github.com/baguchan/EnchantWithMob-BTA"
   },
 
   "license": "CC0-1.0",
@@ -18,11 +17,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "turniplabs.examplemod.ExampleMod"
+      "baguchan.enchantwithmob.EnchantWithMob"
     ]
   },
   "mixins": [
-      "examplemod.mixins.json"
+    "enchantwithmob.mixins.json"
   ],
 
   "depends": {

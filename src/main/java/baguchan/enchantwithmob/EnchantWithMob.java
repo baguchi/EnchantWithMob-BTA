@@ -1,11 +1,11 @@
-package turniplabs.examplemod;
+package baguchan.enchantwithmob;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class ExampleMod implements ModInitializer {
+public class EnchantWithMob implements ModInitializer {
     public static final String MOD_ID = "examplemod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
