@@ -4,6 +4,7 @@
     "package": "baguchan.enchantwithmob.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
+        "EntityLivingMixin"
     ],
     "client": [
         "client.LivingRendererMixin"
