@@ -45,7 +45,7 @@ public abstract class LivingRendererMixin<T extends EntityLiving> extends Entity
                     GL11.glEnable(3042);
                     GL11.glDisable(3008);
                     GL11.glBlendFunc(770, 771);
-                    this.loadTexture("/assets/enchantwithmob//mobs/enchant_glint.png");
+                    this.loadTexture("/assets/enchantwithmob/mobs/enchant_glint.png");
 
                     this.mainModel.setLivingAnimations(entity, limbSwing, limbYaw, renderPartialTicks);
                     this.mainModel.render(limbSwing, limbYaw, ticksExisted, headYaw - headYawOffset, headPitch, scale);

@@ -1,6 +1,7 @@
 package baguchan.enchantwithmob;
 
 import baguchan.enchantwithmob.register.MobEnchants;
+import baguchan.enchantwithmob.register.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,5 +14,6 @@ public class EnchantWithMob implements ModInitializer {
     @Override
     public void onInitialize() {
         MobEnchants.init();
+        ModItems.createItems();
     }
 }
