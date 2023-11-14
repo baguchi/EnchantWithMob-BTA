@@ -25,7 +25,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3"
+    "fabricloader": ">=0.13.3",
+    "halplibe": ">=2.6.0",
+    "prismaticlibe": ">=1.1.0"
   },
   "suggests": {
   }

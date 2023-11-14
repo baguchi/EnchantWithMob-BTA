@@ -1,11 +1,14 @@
 package baguchan.enchantwithmob.utils;
 
+import baguchan.enchantwithmob.mixin.WorldServerAccessor;
 import baguchan.enchantwithmob.mobenchant.MobEnchant;
+import baguchan.enchantwithmob.packet.MobEnchantPacket;
 import com.google.common.collect.Lists;
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
 import com.mojang.nbt.Tag;
 import net.minecraft.core.entity.EntityLiving;
+import net.minecraft.server.world.WorldServer;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,10 +33,9 @@ public class MobEnchantCap {
     public void addMobEnchant(EntityLiving entity, MobEnchant mobEnchant, int enchantLevel) {
 
         this.mobEnchants.add(new MobEnchantmentData(mobEnchant, enchantLevel));
-       /* if (!entity.world.isClientSide) {
-            MobEnchantedMessage message = new MobEnchantedMessage(entity, mobEnchant, enchantLevel);
-            EnchantWithMob.CHANNEL.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> entity), message);
-        }*/
+        if (!entity.world.isClientSide && entity.world instanceof WorldServer) {
+            ((WorldServerAccessor) entity.world).getMinecraftServer().configManager.sendPacketToAllPlayersInDimension(new MobEnchantPacket(entity.id, mobEnchant, enchantLevel), entity.world.dimension.id);
+        }
         this.sync(entity);
     }
 

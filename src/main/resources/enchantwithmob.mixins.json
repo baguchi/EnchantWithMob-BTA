@@ -4,7 +4,10 @@
     "package": "baguchan.enchantwithmob.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-        "EntityLivingMixin"
+        "EntityLivingMixin",
+        "NetClientHandlerMixin",
+        "NetHandlerMixin",
+        "WorldServerAccessor"
     ],
     "client": [
         "client.LivingRendererMixin"
