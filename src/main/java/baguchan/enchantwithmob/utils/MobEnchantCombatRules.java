@@ -1,5 +1,7 @@
 package baguchan.enchantwithmob.utils;
 
+import net.minecraft.core.util.helper.MathHelper;
+
 public class MobEnchantCombatRules {
 
     public static float getDamageAddition(float damage, int mobEnchantLevel, int mobEnchantSize) {
@@ -15,6 +17,13 @@ public class MobEnchantCombatRules {
         float f1 = 0.5F * mobEnchantLevel;
         float f2 = Math.max(f1 * 0.1F, (f1 + f) * 0.1F);
         damage *= (1.0F - f2);
+        return damage;
+    }
+
+    public static float getThornDamage(float damage, int mobEnchantLevel) {
+        if (mobEnchantLevel > 0) {
+            damage = MathHelper.floor_float(damage * (float) mobEnchantLevel * 0.15F) - 1.0F;
+        }
         return damage;
     }
 }

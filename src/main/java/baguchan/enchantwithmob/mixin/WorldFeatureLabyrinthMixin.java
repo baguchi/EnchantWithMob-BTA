@@ -20,7 +20,7 @@ public class WorldFeatureLabyrinthMixin {
         if (i == 0) {
             ItemStack stack = new ItemStack(ModItems.mob_enchant_book);
 
-            cir.setReturnValue(MobEnchantUtils.addRandomEnchantmentToItemStack(random, stack, 20, true, false));
+            cir.setReturnValue(MobEnchantUtils.addRandomEnchantmentToItemStack(random, stack, 25 + random.nextInt(10), true, false));
         }
     }
 }

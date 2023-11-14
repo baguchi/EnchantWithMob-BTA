@@ -30,7 +30,7 @@ public class ItemMobEnchantBook extends Item {
                         return true;
                     }
                 } else {
-                    MobEnchantUtils.addRandomEnchantmentToEntity(entityliving, ((IEnchantCap) entityliving), itemRand, 10, true, false);
+                    MobEnchantUtils.addRandomEnchantmentToEntity(entityliving, ((IEnchantCap) entityliving), itemRand, 25, true, false);
                     itemstack.consumeItem(entityPlayer);
                     int i = MobEnchantUtils.getMobEnchantLevelFromHandler(((IEnchantCap) entityliving).getEnchantCap().getMobEnchants(), MobEnchants.EXTRA_HEALTH);
                     entityliving.health += i * 4;
@@ -57,7 +57,7 @@ public class ItemMobEnchantBook extends Item {
                         return itemstack;
                     }
                 } else {
-                    MobEnchantUtils.addRandomEnchantmentToEntity(entityplayer, ((IEnchantCap) entityplayer), itemRand, 10, true, false);
+                    MobEnchantUtils.addRandomEnchantmentToEntity(entityplayer, ((IEnchantCap) entityplayer), itemRand, 25, true, false);
                     itemstack.consumeItem(entityplayer);
                     int i = MobEnchantUtils.getMobEnchantLevelFromHandler(((IEnchantCap) entityplayer).getEnchantCap().getMobEnchants(), MobEnchants.EXTRA_HEALTH);
                     entityplayer.health += i * 4;

@@ -38,11 +38,11 @@ public class MobEnchant {
     }
 
     public int getMinEnchantability(int enchantmentLevel) {
-        return 1 + enchantmentLevel * 10;
+        return 1 + (enchantmentLevel - 1) * 10;
     }
 
     public int getMaxEnchantability(int enchantmentLevel) {
-        return this.getMinEnchantability(enchantmentLevel) + 5;
+        return this.getMinEnchantability(enchantmentLevel) + 20;
     }
 
 
