@@ -5,7 +5,7 @@ import net.minecraft.server.world.WorldServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(WorldServer.class)
+@Mixin(value = WorldServer.class, remap = false)
 public interface WorldServerAccessor {
     @Accessor("mcServer")
     MinecraftServer getMinecraftServer();
